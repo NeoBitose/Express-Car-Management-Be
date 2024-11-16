@@ -8,7 +8,12 @@ const imagekit = require("../../../lib/imagekit");
 
 async function getAllUsers(req, res) {
     try {
+        const { page = 1, limit = 10 } = req.body;
+        const offset = (page - 1) * limit;
+
         const users = await Users.findAll({
+            limit: limit,
+            offset: offset,
             order: ['id']
         });
 
@@ -21,11 +26,17 @@ async function getAllUsers(req, res) {
             });
         }
 
+        const totalData = await users.length;
+        const totalPages = Math.ceil(totalData / limit);
+
         res.status(200).json({
             status: "Success",
             message: "Success get users data",
             isSuccess: true,
             data: {
+                totalData,
+                totalPages,
+                page,
                 users,
             },
         });
