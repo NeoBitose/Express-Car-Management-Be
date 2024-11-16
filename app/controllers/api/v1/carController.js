@@ -1,5 +1,6 @@
 const { Cars, Users } = require("../../../models");
 const imagekit = require("../../../lib/imagekit");
+const { Op, where } = require("sequelize");
 
 async function getAllCars(req, res) {
     try {
@@ -15,7 +16,7 @@ async function getAllCars(req, res) {
                     as: 'userUpdate',
                     attributes: ['id', 'firstName', 'lastName', 'role'],
                 },
-                { 
+                {
                     model: Users,
                     as: 'userDelete',
                     attributes: ['id', 'firstName', 'lastName', 'role'],
@@ -39,6 +40,97 @@ async function getAllCars(req, res) {
             message: "Success get cars data",
             isSuccess: true,
             data: {
+                cars,
+            },
+        });
+    }
+    catch (error) {
+        if (error.name === "SequelizeValidationError") {
+            const errorMessage = error.errors.map((err) => err.message);
+            return res.status(400).json({
+                status: "Failed",
+                message: errorMessage[0],
+                isSuccess: false,
+                data: null,
+            });
+        } else if (error.name === "SequelizeDatabaseError") {
+            return res.status(400).json({
+                status: "Failed",
+                message: error.message || "Database error",
+                isSuccess: false,
+                data: null,
+            });
+        } else {
+            return res.status(500).json({
+                status: "Failed",
+                message: error.message,
+                isSuccess: false,
+                data: null,
+            });
+        }
+    }
+}
+
+async function getFilterCars(req, res) {
+    try {
+
+        const { name, harga, page = 1, limit = 10 } = req.body;
+
+        const condition = {};
+        if (name) condition.name = { [Op.iLike]: `%${name}%` }
+        if (harga) {
+            condition.harga = {
+                [Op.lte]: harga
+            };
+        }
+
+        const offset = (page - 1) * limit;
+
+        const cars = await Cars.findAll({
+            include: [
+                {
+                    model: Users,
+                    as: 'userCreate',
+                    attributes: ['id', 'firstName', 'lastName', 'role'],
+                },
+                {
+                    model: Users,
+                    as: 'userUpdate',
+                    attributes: ['id', 'firstName', 'lastName', 'role'],
+                },
+                {
+                    model: Users,
+                    as: 'userDelete',
+                    attributes: ['id', 'firstName', 'lastName', 'role'],
+                }
+            ],
+            attributes: ['id', 'name', 'tahun', 'noPlat', 'harga', 'fotoMobil', 'createdAt', 'updatedAt', 'deletedAt'],
+            where: condition,
+            limit: limit,
+            offset: offset,
+            order: ['id']
+        });
+
+        if (cars.length === 0) {
+            return res.status(404).json({
+                status: "Failed",
+                message: "No data cars found",
+                isSuccess: false,
+                data: null,
+            });
+        }
+
+        const totalData = await cars.length;
+        const totalPages = Math.ceil(totalData / limit);
+
+        res.status(200).json({
+            status: "Success",
+            message: "Success get cars data",
+            isSuccess: true,
+            data: {
+                totalData,
+                totalPages,
+                page,
                 cars,
             },
         });
@@ -261,11 +353,11 @@ async function updateCar(req, res) {
                 });
             }
             detailCar.name = name,
-            detailCar.tahun = tahun,
-            detailCar.noPlat = noPlat,
-            detailCar.harga = harga,
-            detailCar.fotoMobil = uploadedImage.url,
-            detailCar.updatedBy = req.user.id
+                detailCar.tahun = tahun,
+                detailCar.noPlat = noPlat,
+                detailCar.harga = harga,
+                detailCar.fotoMobil = uploadedImage.url,
+                detailCar.updatedBy = req.user.id
 
             await detailCar.save();
 
@@ -354,7 +446,7 @@ async function deleteCar(req, res) {
         const dateNow = Date.now();
         const dateParse = new Date(dateNow);
         car.deletedBy = req.user.id,
-        car.deletedAt = dateNow
+            car.deletedAt = dateNow
 
         await car.save({ silent: true });
 
@@ -400,6 +492,7 @@ async function deleteCar(req, res) {
 
 module.exports = {
     getAllCars,
+    getFilterCars,
     getCarbyId,
     createCar,
     updateCar,
