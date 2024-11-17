@@ -7,7 +7,7 @@ router.get("/", authenticated, authorize('superadmin'), UserController.getAllUse
 router.get("/:id", authenticated, authorize('superadmin'), UserController.getUserbyId);
 router.post("/", authenticated, authorize('superadmin'), uploader.single("fotoProfil"), UserController.createUser);
 router.get("/current/user", authenticated, authorize('superadmin'), UserController.currentUser);
-router.patch("/:id", authenticated, authorize('superadmin', 'member'), uploader.single("fotoProfil"), UserController.updateUser);
+router.patch("/:id", authenticated, authorize('superadmin', 'admin', 'member'), uploader.single("fotoProfil"), UserController.updateUser);
 // router.delete("/:id", UserController.deleteUser);
 
 
