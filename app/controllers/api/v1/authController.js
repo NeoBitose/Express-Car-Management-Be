@@ -131,7 +131,7 @@ const login = async (req, res) => {
         const userDetail = await Users.findOne({
             where: { email: emailLowerCase }
         });
-
+        console.log(userDetail)
         if (!userDetail) {
             return res.status(404).json({
                 status: "Failed",
@@ -148,6 +148,9 @@ const login = async (req, res) => {
                 id: userDetail.id,
                 email: email,
                 role: userDetail.role,
+                firstName: userDetail.firstName,
+                lastName: userDetail.lastName,
+                fotoProfil: userDetail.fotoProfil,
                 createdAt: userDetail.createdAt,
                 updatedAt: userDetail.updatedAt
             })
@@ -162,7 +165,8 @@ const login = async (req, res) => {
                     lastName: userDetail.lastName,
                     phone: userDetail.phone,
                     token: token,
-                    role: userDetail.role
+                    role: userDetail.role,
+                    fotoProfil: userDetail.fotoProfil
                 },
             });
         }
