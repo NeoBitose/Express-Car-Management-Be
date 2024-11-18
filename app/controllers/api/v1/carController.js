@@ -71,10 +71,14 @@ async function getAllCars(req, res) {
     }
 }
 
+
+
+
 async function getFilterCars(req, res) {
     try {
 
         const { name, harga, page = 1, limit = 10 } = req.query;
+        console.log(name, harga);
 
         const condition = {};
         if (name) condition.name = { [Op.iLike]: `%${name}%` }

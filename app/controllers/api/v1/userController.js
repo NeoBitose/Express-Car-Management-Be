@@ -1,22 +1,20 @@
-const bcrypt = require("bcryptjs");
-const { where } = require("sequelize");
+const bcrypt = require('bcryptjs');
+const { where } = require('sequelize');
 const validator = require("validator");
-const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken")
 
 const { Users } = require("../../../models");
 const imagekit = require("../../../lib/imagekit");
 
 async function getAllUsers(req, res) {
     try {
-        const { page = 1, limit = 10 } = req.query;
+        const { page = 1, limit = 10 } = req.body;
         const offset = (page - 1) * limit;
 
-        const totalData = await Users.count();
-
         const users = await Users.findAll({
-            limit: parseInt(limit),
-            offset: parseInt(offset),
-            order: [["id", "ASC"]],
+            limit: limit,
+            offset: offset,
+            order: ['id']
         });
 
         if (users.length === 0) {
@@ -28,6 +26,7 @@ async function getAllUsers(req, res) {
             });
         }
 
+        const totalData = await users.length;
         const totalPages = Math.ceil(totalData / limit);
 
         res.status(200).json({
@@ -37,11 +36,12 @@ async function getAllUsers(req, res) {
             data: {
                 totalData,
                 totalPages,
-                page: parseInt(page),
+                page,
                 users,
             },
         });
-    } catch (error) {
+    }
+    catch (error) {
         if (error.name === "SequelizeValidationError") {
             const errorMessage = error.errors.map((err) => err.message);
             return res.status(400).json({
@@ -89,7 +89,8 @@ async function getUserbyId(req, res) {
                 user,
             },
         });
-    } catch (error) {
+    }
+    catch (error) {
         if (error.name === "SequelizeValidationError") {
             const errorMessage = error.errors.map((err) => err.message);
             return res.status(400).json({
@@ -134,7 +135,7 @@ async function createUser(req, res) {
         if (!validator.isEmail(email)) {
             return res.status(400).json({
                 status: "Failed",
-                message: "Email is not valid",
+                message: 'Email is not valid',
                 isSuccess: false,
                 data: null,
             });
@@ -143,21 +144,22 @@ async function createUser(req, res) {
         if (!validator.isLength(password, { min: 8 })) {
             return res.status(400).json({
                 status: "Failed",
-                message: "Password at least 8 char",
+                message: 'Password at least 8 char',
                 isSuccess: false,
                 data: null,
             });
-        } else if (!validator.isLength(password, { max: 100 })) {
+        }
+        else if (!validator.isLength(password, { max: 100 })) {
             return res.status(400).json({
                 status: "Failed",
-                message: "Password max 100 char",
+                message: 'Password max 100 char',
                 isSuccess: false,
                 data: null,
             });
         }
 
         if (req.file) {
-            console.log("ok");
+            console.log("ok")
             const file = req.file;
             const split = file.originalname.split(".");
             const ext = split[split.length - 1];
@@ -173,7 +175,8 @@ async function createUser(req, res) {
                     isSuccess: false,
                     data: null,
                 });
-            } else if (uploadedImage) {
+            }
+            else if (uploadedImage) {
                 const newUser = await Users.create({
                     email,
                     password: hashedPassword,
@@ -181,8 +184,8 @@ async function createUser(req, res) {
                     lastName,
                     phone,
                     fotoProfil: uploadedImage.url,
-                    role: "admin",
-                });
+                    role: "admin"
+                })
 
                 res.status(200).json({
                     status: "Success",
@@ -193,14 +196,15 @@ async function createUser(req, res) {
                     },
                 });
             }
-        } else {
+        }
+        else {
             const newUser = await Users.create({
                 email,
                 password: hashedPassword,
                 firstName,
                 lastName,
                 phone,
-                role: "admin",
+                role: "admin"
             });
 
             res.status(200).json({
@@ -212,7 +216,8 @@ async function createUser(req, res) {
                 },
             });
         }
-    } catch (error) {
+    }
+    catch (error) {
         if (error.name === "SequelizeValidationError") {
             const errorMessage = error.errors.map((err) => err.message);
             return res.status(400).json({
@@ -258,7 +263,41 @@ async function updateUser(req, res) {
         if (!validator.isEmail(email)) {
             return res.status(400).json({
                 status: "Failed",
-                message: "Email is not valid",
+                message: 'Email is not valid',
+                isSuccess: false,
+                data: null,
+            });
+        }
+
+        if (!validator.isLength(password, { min: 8 })) {
+            return res.status(400).json({
+                status: "Failed",
+                message: 'Password at least 8 char',
+                isSuccess: false,
+                data: null,
+            });
+        }
+        else if (!validator.isLength(password, { max: 100 })) {
+            return res.status(400).json({
+                status: "Failed",
+                message: 'Password max 100 char',
+                isSuccess: false,
+                data: null,
+            });
+        }
+
+        if (!validator.isLength(confirmPassword, { min: 8 })) {
+            return res.status(400).json({
+                status: "Failed",
+                message: 'Confirm Password at least 8 char',
+                isSuccess: false,
+                data: null,
+            });
+        }
+        else if (!validator.isLength(confirmPassword, { max: 100 })) {
+            return res.status(400).json({
+                status: "Failed",
+                message: 'Confirm Password max 100 char',
                 isSuccess: false,
                 data: null,
             });
@@ -277,40 +316,6 @@ async function updateUser(req, res) {
         }
 
         if (password != "") {
-            if (!validator.isLength(password, { min: 8 })) {
-                return res.status(400).json({
-                    status: "Failed",
-                    message: 'Password at least 8 char',
-                    isSuccess: false,
-                    data: null,
-                });
-            }
-            else if (!validator.isLength(password, { max: 100 })) {
-                return res.status(400).json({
-                    status: "Failed",
-                    message: 'Password max 100 char',
-                    isSuccess: false,
-                    data: null,
-                });
-            }
-
-            if (!validator.isLength(confirmPassword, { min: 8 })) {
-                return res.status(400).json({
-                    status: "Failed",
-                    message: 'Confirm Password at least 8 char',
-                    isSuccess: false,
-                    data: null,
-                });
-            }
-            else if (!validator.isLength(confirmPassword, { max: 100 })) {
-                return res.status(400).json({
-                    status: "Failed",
-                    message: 'Confirm Password max 100 char',
-                    isSuccess: false,
-                    data: null,
-                });
-            }
-
             const isCorrectPass = await bcrypt.compare(confirmPassword, user.password)
             if (isCorrectPass) {
                 hashedPassword = await bcrypt.hash(password, 10);
@@ -347,21 +352,21 @@ async function updateUser(req, res) {
             }
             else if (uploadedImage) {
                 user.email = email,
-                    user.password = hashedPassword,
-                    user.firstName = firstName,
-                    user.lastName = lastName,
-                    user.phone = phone,
-                    user.fotoProfil = uploadedImage.url
+                user.password = hashedPassword,
+                user.firstName = firstName,
+                user.lastName = lastName,
+                user.phone = phone,
+                user.fotoProfil = uploadedImage.url
 
                 user.save();
             }
         }
         else {
             user.email = email,
-                user.password = hashedPassword,
-                user.firstName = firstName,
-                user.lastName = lastName,
-                user.phone = phone
+            user.password = hashedPassword,
+            user.firstName = firstName,
+            user.lastName = lastName,
+            user.phone = phone
 
             user.save();
         }
@@ -405,20 +410,16 @@ async function updateUser(req, res) {
 async function currentUser(req, res) {
     try {
         const current = req.user;
-        const id = current.id;
-        const email = current.email;
-        const role = current.role;
-        const iat = current.iat;
-        const exp = current.exp;
+        const id = current.id
+        const email = current.email
+        const role = current.role
+        const iat = current.iat
+        const exp = current.exp
 
-        const iatDate = new Date(iat * 1000).toLocaleString("en-US", {
-            timeZone: "Asia/Jakarta",
-        });
-        const expDate = new Date(exp * 1000).toLocaleString("en-US", {
-            timeZone: "Asia/Jakarta",
-        });
+        const iatDate = new Date(iat * 1000).toLocaleString('en-US', { timeZone: 'Asia/Jakarta' });
+        const expDate = new Date(exp * 1000).toLocaleString('en-US', { timeZone: 'Asia/Jakarta' });
 
-        console.log(current, iat, exp);
+        console.log(current, iat, exp)
         if (!current || Object.keys(current).length === 0) {
             return res.status(404).json({
                 status: "Failed",
@@ -437,11 +438,12 @@ async function currentUser(req, res) {
                     email,
                     role,
                     iat: iatDate,
-                    exp: expDate,
+                    exp: expDate
                 },
             },
         });
-    } catch (error) {
+    }
+    catch (error) {
         if (error.name === "SequelizeValidationError") {
             const errorMessage = error.errors.map((err) => err.message);
             return res.status(400).json({
@@ -473,5 +475,5 @@ module.exports = {
     getUserbyId,
     createUser,
     updateUser,
-    currentUser,
-};
+    currentUser
+}
