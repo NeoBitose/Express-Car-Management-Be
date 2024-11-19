@@ -5,7 +5,7 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     const hashedPassword = await bcrypt.hash("bismillah", 10);
     const profileImageUrl =
-      "https://ik.imagekit.io/72mu50jam/Profile-1729085395444_tlOC1sGxx.jpg?updatedAt=1729085401581";
+      "https://ik.imagekit.io/epqufjrrv/boy.jpg?updatedAt=1732007400483";
 
     return queryInterface.bulkInsert("Users", [
       {
