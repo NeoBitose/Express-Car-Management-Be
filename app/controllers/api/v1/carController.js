@@ -92,6 +92,7 @@ async function getFilterCars(req, res) {
         [Op.lte]: harga,
       };
     }
+    condition.deletedAt = null
 
     const offset = (page - 1) * limit;
 
