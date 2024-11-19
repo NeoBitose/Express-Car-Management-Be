@@ -11,7 +11,8 @@ module.exports = {
           tahun: 2020,
           noPlat: "B 1234 XYZ",
           harga: 150000000,
-          fotoMobil: "https://example.com/foto/toyota-avanza.jpg",
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
           createdBy: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -21,7 +22,8 @@ module.exports = {
           tahun: 2019,
           noPlat: "B 5678 ABC",
           harga: 200000000,
-          fotoMobil: "https://example.com/foto/honda-jazz.jpg",
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
           createdBy: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -31,7 +33,8 @@ module.exports = {
           tahun: 2021,
           noPlat: "B 9101 DEF",
           harga: 400000000,
-          fotoMobil: "https://example.com/foto/mitsubishi-pajero.jpg",
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
           createdBy: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -41,7 +44,8 @@ module.exports = {
           tahun: 2022,
           noPlat: "B 2468 GHI",
           harga: 450000000,
-          fotoMobil: "https://example.com/foto/toyota-fortuner.jpg",
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
           createdBy: 3,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -51,7 +55,8 @@ module.exports = {
           tahun: 2021,
           noPlat: "B 1357 JKL",
           harga: 350000000,
-          fotoMobil: "https://example.com/foto/honda-crv.jpg",
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
           createdBy: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -61,7 +66,8 @@ module.exports = {
           tahun: 2020,
           noPlat: "B 7890 MNO",
           harga: 180000000,
-          fotoMobil: "https://example.com/foto/suzuki-ertiga.jpg",
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
           createdBy: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -71,7 +77,8 @@ module.exports = {
           tahun: 2019,
           noPlat: "B 4567 PQR",
           harga: 140000000,
-          fotoMobil: "https://example.com/foto/daihatsu-xenia.jpg",
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
           createdBy: 3,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -81,7 +88,8 @@ module.exports = {
           tahun: 2021,
           noPlat: "B 8901 STU",
           harga: 220000000,
-          fotoMobil: "https://example.com/foto/toyota-rush.jpg",
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
           createdBy: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -91,7 +99,8 @@ module.exports = {
           tahun: 2022,
           noPlat: "B 2345 VWX",
           harga: 250000000,
-          fotoMobil: "https://example.com/foto/mitsubishi-xpander.jpg",
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
           createdBy: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -101,7 +110,8 @@ module.exports = {
           tahun: 2021,
           noPlat: "B 6789 YZA",
           harga: 420000000,
-          fotoMobil: "https://example.com/foto/honda-civic.jpg",
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
           createdBy: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -111,7 +121,8 @@ module.exports = {
           tahun: 2022,
           noPlat: "B 3456 BCD",
           harga: 550000000,
-          fotoMobil: "https://example.com/foto/toyota-camry.jpg",
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
           createdBy: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -121,7 +132,8 @@ module.exports = {
           tahun: 2021,
           noPlat: "B 7890 EFG",
           harga: 480000000,
-          fotoMobil: "https://example.com/foto/mazda-cx5.jpg",
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
           createdBy: 3,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -131,7 +143,8 @@ module.exports = {
           tahun: 2022,
           noPlat: "B 1234 HIJ",
           harga: 350000000,
-          fotoMobil: "https://example.com/foto/hyundai-creta.jpg",
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
           createdBy: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -141,7 +154,8 @@ module.exports = {
           tahun: 2021,
           noPlat: "B 5678 KLM",
           harga: 230000000,
-          fotoMobil: "https://example.com/foto/suzuki-xl7.jpg",
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
           createdBy: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -151,7 +165,8 @@ module.exports = {
           tahun: 2020,
           noPlat: "B 9012 NOP",
           harga: 160000000,
-          fotoMobil: "https://example.com/foto/honda-brio.jpg",
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
           createdBy: 3,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -161,7 +176,8 @@ module.exports = {
           tahun: 2022,
           noPlat: "B 3456 QRS",
           harga: 210000000,
-          fotoMobil: "https://example.com/foto/toyota-raize.jpg",
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
           createdBy: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -171,7 +187,8 @@ module.exports = {
           tahun: 2021,
           noPlat: "B 7890 TUV",
           harga: 470000000,
-          fotoMobil: "https://example.com/foto/mitsubishi-eclipse.jpg",
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
           createdBy: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -181,7 +198,8 @@ module.exports = {
           tahun: 2022,
           noPlat: "B 1234 WXY",
           harga: 190000000,
-          fotoMobil: "https://example.com/foto/daihatsu-rocky.jpg",
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
           createdBy: 3,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -191,7 +209,8 @@ module.exports = {
           tahun: 2021,
           noPlat: "B 5678 ZAB",
           harga: 320000000,
-          fotoMobil: "https://example.com/foto/honda-hrv.jpg",
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
           createdBy: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -201,11 +220,57 @@ module.exports = {
           tahun: 2022,
           noPlat: "B 9012 CDE",
           harga: 440000000,
-          fotoMobil: "https://example.com/foto/toyota-corolla-cross.jpg",
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
           createdBy: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          name: "Toyota Cross",
+          tahun: 2022,
+          noPlat: "B 9012 CDE",
+          harga: 440000000,
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
+          createdBy: 1,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: "Mazda Miata",
+          tahun: 2022,
+          noPlat: "B 9012 CDE",
+          harga: 440000000,
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
+          createdBy: 1,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: "Honda NSX",
+          tahun: 2022,
+          noPlat: "B 9012 CDE",
+          harga: 440000000,
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
+          createdBy: 1,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: "Toyota Avanza",
+          tahun: 2022,
+          noPlat: "B 9012 CDE",
+          harga: 440000000,
+          fotoMobil:
+            "https://ik.imagekit.io/72mu50jam/Car-1728747857773_NtB6Lw9Fx.jpeg?updatedAt=1728747862790",
+          createdBy: 1,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        
       ],
       {}
     );

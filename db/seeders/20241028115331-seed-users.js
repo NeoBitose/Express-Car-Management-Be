@@ -11,7 +11,8 @@ module.exports = {
         firstName: "Alif",
         lastName: "Ramadhan",
         phone: "1234567890",
-        fotoProfil: "https://example.com/profile1.jpg",
+        fotoProfil:
+          "https://ik.imagekit.io/epqufjrrv/PM-Soft-Spoken.png?updatedAt=1731998309126",
         role: "superadmin",
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -22,7 +23,8 @@ module.exports = {
         firstName: "Jane",
         lastName: "Doe",
         phone: "0987654321",
-        fotoProfil: "https://example.com/profile2.jpg",
+        fotoProfil:
+          "https://ik.imagekit.io/72mu50jam/Profile-1729085395444_tlOC1sGxx.jpg?updatedAt=1729085401581",
         role: "admin",
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -33,7 +35,8 @@ module.exports = {
         firstName: "Eric",
         lastName: "Joe",
         phone: "0987654321",
-        fotoProfil: "https://example.com/profile3.jpg",
+        fotoProfil:
+          "https://ik.imagekit.io/72mu50jam/Profile-1729085395444_tlOC1sGxx.jpg?updatedAt=1729085401581",
         role: "member",
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -44,7 +47,8 @@ module.exports = {
         firstName: "Sarah",
         lastName: "Wilson",
         phone: "1122334455",
-        fotoProfil: "https://example.com/profile4.jpg",
+        fotoProfil:
+          "https://ik.imagekit.io/72mu50jam/Profile-1729085395444_tlOC1sGxx.jpg?updatedAt=1729085401581",
         role: "member",
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -55,7 +59,8 @@ module.exports = {
         firstName: "Michael",
         lastName: "Brown",
         phone: "2233445566",
-        fotoProfil: "https://example.com/profile5.jpg",
+        fotoProfil:
+          "https://ik.imagekit.io/72mu50jam/Profile-1729085395444_tlOC1sGxx.jpg?updatedAt=1729085401581",
         role: "member",
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -66,7 +71,8 @@ module.exports = {
         firstName: "Emma",
         lastName: "Davis",
         phone: "3344556677",
-        fotoProfil: "https://example.com/profile6.jpg",
+        fotoProfil:
+          "https://ik.imagekit.io/72mu50jam/Profile-1729085395444_tlOC1sGxx.jpg?updatedAt=1729085401581",
         role: "admin",
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -77,7 +83,8 @@ module.exports = {
         firstName: "James",
         lastName: "Miller",
         phone: "4455667788",
-        fotoProfil: "https://example.com/profile7.jpg",
+        fotoProfil:
+          "https://ik.imagekit.io/72mu50jam/Profile-1729085395444_tlOC1sGxx.jpg?updatedAt=1729085401581",
         role: "member",
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -88,7 +95,8 @@ module.exports = {
         firstName: "Olivia",
         lastName: "Garcia",
         phone: "5566778899",
-        fotoProfil: "https://example.com/profile8.jpg",
+        fotoProfil:
+          "https://ik.imagekit.io/72mu50jam/Profile-1729085395444_tlOC1sGxx.jpg?updatedAt=1729085401581",
         role: "member",
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -99,7 +107,8 @@ module.exports = {
         firstName: "William",
         lastName: "Anderson",
         phone: "6677889900",
-        fotoProfil: "https://example.com/profile9.jpg",
+        fotoProfil:
+          "https://ik.imagekit.io/72mu50jam/Profile-1729085395444_tlOC1sGxx.jpg?updatedAt=1729085401581",
         role: "member",
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -110,7 +119,8 @@ module.exports = {
         firstName: "Sophia",
         lastName: "Martinez",
         phone: "7788990011",
-        fotoProfil: "https://example.com/profile10.jpg",
+        fotoProfil:
+          "https://ik.imagekit.io/72mu50jam/Profile-1729085395444_tlOC1sGxx.jpg?updatedAt=1729085401581",
         role: "admin",
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -121,7 +131,8 @@ module.exports = {
         firstName: "Lucas",
         lastName: "Taylor",
         phone: "8899001122",
-        fotoProfil: "https://example.com/profile11.jpg",
+        fotoProfil:
+          "https://ik.imagekit.io/72mu50jam/Profile-1729085395444_tlOC1sGxx.jpg?updatedAt=1729085401581",
         role: "member",
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -132,7 +143,8 @@ module.exports = {
         firstName: "Ava",
         lastName: "Thomas",
         phone: "9900112233",
-        fotoProfil: "https://example.com/profile12.jpg",
+        fotoProfil:
+          "https://ik.imagekit.io/72mu50jam/Profile-1729085395444_tlOC1sGxx.jpg?updatedAt=1729085401581",
         role: "member",
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -143,7 +155,8 @@ module.exports = {
         firstName: "Henry",
         lastName: "Moore",
         phone: "0011223344",
-        fotoProfil: "https://example.com/profile13.jpg",
+        fotoProfil:
+          "https://ik.imagekit.io/72mu50jam/Profile-1729085395444_tlOC1sGxx.jpg?updatedAt=1729085401581",
         role: "member",
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -154,7 +167,8 @@ module.exports = {
         firstName: "Isabella",
         lastName: "White",
         phone: "1122334455",
-        fotoProfil: "https://example.com/profile14.jpg",
+        fotoProfil:
+          "https://ik.imagekit.io/72mu50jam/Profile-1729085395444_tlOC1sGxx.jpg?updatedAt=1729085401581",
         role: "member",
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -165,7 +179,8 @@ module.exports = {
         firstName: "Daniel",
         lastName: "Lee",
         phone: "2233445566",
-        fotoProfil: "https://example.com/profile15.jpg",
+        fotoProfil:
+          "https://ik.imagekit.io/72mu50jam/Profile-1729085395444_tlOC1sGxx.jpg?updatedAt=1729085401581",
         role: "admin",
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -176,7 +191,8 @@ module.exports = {
         firstName: "Mia",
         lastName: "Harris",
         phone: "3344556677",
-        fotoProfil: "https://example.com/profile16.jpg",
+        fotoProfil:
+          "https://ik.imagekit.io/72mu50jam/Profile-1729085395444_tlOC1sGxx.jpg?updatedAt=1729085401581",
         role: "member",
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -187,7 +203,8 @@ module.exports = {
         firstName: "Alexander",
         lastName: "Clark",
         phone: "4455667788",
-        fotoProfil: "https://example.com/profile17.jpg",
+        fotoProfil:
+          "https://ik.imagekit.io/72mu50jam/Profile-1729085395444_tlOC1sGxx.jpg?updatedAt=1729085401581",
         role: "member",
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -198,7 +215,8 @@ module.exports = {
         firstName: "Charlotte",
         lastName: "Lewis",
         phone: "5566778899",
-        fotoProfil: "https://example.com/profile18.jpg",
+        fotoProfil:
+          "https://ik.imagekit.io/72mu50jam/Profile-1729085395444_tlOC1sGxx.jpg?updatedAt=1729085401581",
         role: "member",
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -209,7 +227,8 @@ module.exports = {
         firstName: "Benjamin",
         lastName: "Young",
         phone: "6677889900",
-        fotoProfil: "https://example.com/profile19.jpg",
+        fotoProfil:
+          "https://ik.imagekit.io/72mu50jam/Profile-1729085395444_tlOC1sGxx.jpg?updatedAt=1729085401581",
         role: "member",
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -220,7 +239,8 @@ module.exports = {
         firstName: "Amelia",
         lastName: "Walker",
         phone: "7788990011",
-        fotoProfil: "https://example.com/profile20.jpg",
+        fotoProfil:
+          "https://ik.imagekit.io/72mu50jam/Profile-1729085395444_tlOC1sGxx.jpg?updatedAt=1729085401581",
         role: "admin",
         createdAt: new Date(),
         updatedAt: new Date(),
