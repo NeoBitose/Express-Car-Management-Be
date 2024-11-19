@@ -265,38 +265,6 @@ async function updateUser(req, res) {
       });
     }
 
-    if (!validator.isLength(password, { min: 8 })) {
-      return res.status(400).json({
-        status: "Failed",
-        message: "Password at least 8 char",
-        isSuccess: false,
-        data: null,
-      });
-    } else if (!validator.isLength(password, { max: 100 })) {
-      return res.status(400).json({
-        status: "Failed",
-        message: "Password max 100 char",
-        isSuccess: false,
-        data: null,
-      });
-    }
-
-    if (!validator.isLength(confirmPassword, { min: 8 })) {
-      return res.status(400).json({
-        status: "Failed",
-        message: "Confirm Password at least 8 char",
-        isSuccess: false,
-        data: null,
-      });
-    } else if (!validator.isLength(confirmPassword, { max: 100 })) {
-      return res.status(400).json({
-        status: "Failed",
-        message: "Confirm Password max 100 char",
-        isSuccess: false,
-        data: null,
-      });
-    }
-
     if (user.email != email) {
       const existingUser = await Users.findOne({ where: { email } });
       if (existingUser != null) {
@@ -310,6 +278,39 @@ async function updateUser(req, res) {
     }
 
     if (password != "") {
+
+      if (!validator.isLength(password, { min: 8 })) {
+        return res.status(400).json({
+          status: "Failed",
+          message: "Password at least 8 char",
+          isSuccess: false,
+          data: null,
+        });
+      } else if (!validator.isLength(password, { max: 100 })) {
+        return res.status(400).json({
+          status: "Failed",
+          message: "Password max 100 char",
+          isSuccess: false,
+          data: null,
+        });
+      }
+
+      if (!validator.isLength(confirmPassword, { min: 8 })) {
+        return res.status(400).json({
+          status: "Failed",
+          message: "Confirm Password at least 8 char",
+          isSuccess: false,
+          data: null,
+        });
+      } else if (!validator.isLength(confirmPassword, { max: 100 })) {
+        return res.status(400).json({
+          status: "Failed",
+          message: "Confirm Password max 100 char",
+          isSuccess: false,
+          data: null,
+        });
+      }
+
       const isCorrectPass = await bcrypt.compare(
         confirmPassword,
         user.password
